@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "No dependencies to install."
+  pre_build:
+    commands:
+      - echo "Fetching the WAR file from GitHub..."
+      - curl -L -o ProductManipulation.war "https://raw.githubusercontent.com/It-Solutions-Hub/ProductManipulation/main/ProductManipulation.war"
+  build:
+    commands:
+      - echo "Build phase completed. No additional steps."
+  post_build:
+    commands:
+      - echo "Build completed successfully."
+
+artifacts:
+  files:
+    - ProductManipulation.war
+  discard-paths: yes
+  base-directory: .
